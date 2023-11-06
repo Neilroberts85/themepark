@@ -17,7 +17,10 @@ public class RollerCoaster  extends Attraction implements ITicketed, ISecurity {
 
     @Override
     public double priceFor(Visitor visitor) {
-        return 0;
+        if(visitor.getHeight() > 2.00){
+            return defaultPrice()*2;
+        }
+        return defaultPrice();
     }
 
     @Override
